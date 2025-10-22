@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clinic Management — Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container auth">
+    <img src="assets/logo.jpg" alt="Logo" class="logo" />
+    <h1>Clinic Management System</h1>
+
+    <div id="authActions" class="card">
+      <h2>Sign in / Register</h2>
+      <label>Role
+        <select id="roleSelect">
+          <option value="receptionist">Receptionist</option>
+          <option value="doctor">Doctor</option>
+        </select>
+      </label>
+
+      <label>Email
+        <input id="email" type="email" placeholder="you@example.com" />
+      </label>
+      <label>Password
+        <input id="password" type="password" placeholder="password (min 6)" />
+      </label>
+
+      <div class="row">
+        <button id="signupBtn" class="btn">Register</button>
+        <button id="loginBtn" class="btn btn-primary">Login</button>
+      </div>
+      <p id="authMsg" class="muted"></p>
+      <small class="muted">This demo uses Firebase Auth & Firestore. For production secure rules are mandatory.</small>
+    </div>
+
+    <footer class="muted">Project: Clinic Management System</footer>
+  </div>
+
+  <!-- App script as module -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

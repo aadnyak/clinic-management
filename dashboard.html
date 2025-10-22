@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clinic Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Clinic Dashboard</h1>
+    <div id="topControls">
+      <span id="userInfo"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- Left column: receptionist features -->
+    <section class="card" id="receptionistPanel">
+      <h2>Receptionist — New Patient / Token</h2>
+      <form id="patientForm">
+        <label>Patient Name<input id="p_name" required></label>
+        <label>Age<input id="p_age" type="number" min="0"></label>
+        <label>Phone<input id="p_phone"></label>
+        <label>Symptoms<textarea id="p_symptoms"></textarea></label>
+        <div class="row">
+          <button type="submit" class="btn btn-primary">Add Patient & Generate Token</button>
+        </div>
+      </form>
+
+      <h3>Today Queue</h3>
+      <ul id="tokenList" class="list"></ul>
+
+      <h3>Billing (Generate)</h3>
+      <label>Patient ID / Token <input id="billToken" /></label>
+      <label>Amount <input id="billAmount" type="number" /></label>
+      <button id="generateBill" class="btn">Generate Bill</button>
+      <div id="billResult" class="muted"></div>
+    </section>
+
+    <!-- Right column: doctor features -->
+    <section class="card" id="doctorPanel">
+      <h2>Doctor — Consult & Prescribe</h2>
+      <label>Search Token/Patient <input id="searchToken" placeholder="enter token or name" /></label>
+      <div id="patientDetails" class="muted">Select a patient to see details</div>
+
+      <h3>Write Prescription</h3>
+      <label>Patient Token <input id="presToken" /></label>
+      <label>Prescription<textarea id="prescription"></textarea></label>
+      <label>Next Visit (optional) <input id="nextVisit" type="date" /></label>
+      <button id="savePrescription" class="btn btn-primary">Save Prescription</button>
+
+      <h3>Patient History</h3>
+      <ul id="historyList" class="list"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
